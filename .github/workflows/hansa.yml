@@ -4,9 +4,12 @@ on:
   - push
   - workflow_dispatch
 
+
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      isi: ${{ secrets.HEMMELIG }}
     steps:
     - run: |
-        echo 'hello world'
+        echo $(isi)
